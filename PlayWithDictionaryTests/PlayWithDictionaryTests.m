@@ -10,6 +10,9 @@
 #import <XCTest/XCTest.h>
 #import "TestUtils.h"
 #import "UserInfo.h"
+#import "AddressKey.h"
+#import "BadAddressKey.h"
+#import "NSArray+Testutils.h"
 
 static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9";
 
@@ -37,24 +40,24 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
 
     [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
 
-        //загружаем наш массив, в котором будем искать
+        //загружаем наш массив, в котором будем искать нужные данные
         NSMutableArray *preparedArray = [self buildPreparedArray];
 
         [self startMeasuring]; //начало выполнения
         // выполнение поиска
         __block UserInfo *targetObject;
 
-        [TestUtils performBlock: ^() {
+        [TestUtils performBlock:^() {
 
-            int targetIndex = [preparedArray indexOfObjectPassingTest:^BOOL(UserInfo * obj, NSUInteger idx, BOOL *stop) {
+            int targetIndex = [preparedArray indexOfObjectPassingTest:^BOOL(UserInfo *obj, NSUInteger idx, BOOL *stop) {
                 return [obj.bitcoin isEqualToString:TARGET_BITCOIN_ID];
             }];
 
-            if(targetIndex != NSNotFound){
+            if (targetIndex != NSNotFound) {
                 targetObject = preparedArray[targetIndex];
             }
 
-        } nTimes:1000];
+        }                nTimes:1000];
 
         [self stopMeasuring]; //конец выполнения
 
@@ -64,14 +67,15 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
 
 }
 
+//реализация метода создания массива из данных MOCK_DATA
 - (NSMutableArray *)buildPreparedArray {
     NSArray *rawData = [TestUtils loadRawDataArray];
 
     NSMutableArray *preparedArray = [[NSMutableArray alloc] initWithCapacity:rawData.count];
-    for(NSDictionary *dict in rawData) {
-            UserInfo *userInfo = [UserInfo infoWithDictionary:dict];
-            [preparedArray addObject:userInfo];
-        }
+    for (NSDictionary *dict in rawData) {
+        UserInfo *userInfo = [UserInfo infoWithDictionary:dict];
+        [preparedArray addObject:userInfo];
+    }
     return preparedArray;
 }
 
@@ -84,16 +88,19 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
         [self startMeasuring];
 
         __block UserInfo *targetObject;
-        [TestUtils performBlock: ^() {
-            targetObject = preparedDictionary[TARGET_BITCOIN_ID];
-        } nTimes:1000];
+        [TestUtils performBlock:^() {
 
+            BadAddressKey *key = [BadAddressKey keyWithCountry:@"Indonesia" city:@"Jembangan" address:@"729 Roth Hill"];
+            targetObject = [preparedDictionary objectForKey:key];
+
+            XCTAssertNotNil(targetObject);
+
+        }                nTimes:1000];
 
         [self stopMeasuring];
 
         NSLog(@"%@", targetObject);
     }];
-
 
 
 }
@@ -105,7 +112,11 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
     NSMutableDictionary *result = [[NSMutableDictionary alloc] initWithCapacity:rawData.count];
     for (NSDictionary *dict in rawData) {
         UserInfo *info = [UserInfo infoWithDictionary:dict];
-        result[info.bitcoin] = info; // [result setObject:info forKey:info.bitcoin];
+
+//        result[info.bitcoin] = info; // [result setObject:info forKey:info.bitcoin];
+
+        BadAddressKey *key = [BadAddressKey keyWithCountry:info.country city:info.city address:info.address];
+        result[key] = info;
 
     }
 
@@ -113,5 +124,36 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
 
 
 }
+
+- (void)testFilteringArray {
+    NSMutableArray *preparedArray = [self buildPreparedArray];
+    NSArray *array = [NSArray loadTestListByName:@"CountriesSA" clazz:[self class]];
+//    NSArray *countries = array;
+
+    NSSet *countries = [NSSet setWithArray:array];
+//   [countries logArray];
+
+    [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
+        __block NSMutableArray *finalArray;
+        [self startMeasuring];
+        [TestUtils performBlock:^() {
+
+
+            finalArray = [NSMutableArray array];
+
+            for (UserInfo *info in preparedArray) {
+                if ([countries containsObject:info.country]) {
+                    [finalArray addObject:info];
+                }
+            }
+
+
+        }                nTimes:100];
+        [self stopMeasuring];
+        NSLog(@"found users count: %d", finalArray.count);
+    }];
+
+}
+
 
 @end

@@ -37,6 +37,7 @@
     return result;
 }
 
+//перекрываю метод
 - (NSString *)description {
     NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
     [description appendFormat:@"self.zip=%@", self.zip];

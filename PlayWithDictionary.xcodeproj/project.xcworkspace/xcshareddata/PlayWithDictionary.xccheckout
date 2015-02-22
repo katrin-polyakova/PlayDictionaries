@@ -10,22 +10,26 @@
 	<string>PlayWithDictionary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>26FB5CDDED0B2BFB6FC46F7D9A1CCA597892E05D</key>
+		<string>https://github.com/katrin-polyakova/PlayDictionaries.git</string>
 		<key>9EDCB052FE257A11DEC6573512F013DC7BEDF836</key>
 		<string>https://github.com/katrin-polyakova/Syntax.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PlayWithDictionary/PlayWithDictionary.xcodeproj</string>
+	<string>PlayWithDictionary.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>26FB5CDDED0B2BFB6FC46F7D9A1CCA597892E05D</key>
+		<string>../..</string>
 		<key>9EDCB052FE257A11DEC6573512F013DC7BEDF836</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/katrin-polyakova/Syntax.git</string>
+	<string>https://github.com/katrin-polyakova/PlayDictionaries.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>9EDCB052FE257A11DEC6573512F013DC7BEDF836</string>
+	<string>26FB5CDDED0B2BFB6FC46F7D9A1CCA597892E05D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -34,7 +38,15 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>9EDCB052FE257A11DEC6573512F013DC7BEDF836</string>
 			<key>IDESourceControlWCCName</key>
-			<string>homework</string>
+			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>26FB5CDDED0B2BFB6FC46F7D9A1CCA597892E05D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PlayWithDictionary</string>
 		</dict>
 	</array>
 </dict>
