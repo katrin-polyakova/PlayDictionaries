@@ -13,6 +13,7 @@
 #import "AddressKey.h"
 #import "BadAddressKey.h"
 #import "NSArray+Testutils.h"
+#import "NSDictionary+TestUtils.h"
 
 static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9";
 
@@ -154,6 +155,5 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
     }];
 
 }
-
 
 @end

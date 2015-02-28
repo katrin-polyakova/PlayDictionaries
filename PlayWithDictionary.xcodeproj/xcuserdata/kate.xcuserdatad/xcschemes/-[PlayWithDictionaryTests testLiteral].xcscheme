@@ -32,6 +32,9 @@
                   Identifier = "PlayWithDictionaryTests/testExample">
                </Test>
                <Test
+                  Identifier = "PlayWithDictionaryTests/testFilteringArray">
+               </Test>
+               <Test
                   Identifier = "PlayWithDictionaryTests/testPerformance_searchInArray">
                </Test>
                <Test

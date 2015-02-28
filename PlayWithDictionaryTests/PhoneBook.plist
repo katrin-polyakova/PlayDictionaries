@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Anna</key>
+    <integer>+380678974567</integer>
+
+    <key>Ivan</key>
+    <integer>+380931805603</integer>
+
+    <key>Julia</key>
+    <integer>+7495112783</integer>
+
+    <key>Peter</key>
+    <integer>+380957849322</integer>
+
+    <key>Steve</key>
+    <integer>+7499674582</integer>
+
+</dict>
+</plist>

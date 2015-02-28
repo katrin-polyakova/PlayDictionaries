@@ -28,6 +28,12 @@
                ReferencedContainer = "container:PlayWithDictionary.xcodeproj">
             </BuildableReference>
             <SkippedTests>
+               <Test
+                  Identifier = "HomeWorkTests/testPerformanceExample">
+               </Test>
+               <Test
+                  Identifier = "PlayWithDictionaryTests">
+               </Test>
             </SkippedTests>
          </TestableReference>
       </Testables>
