@@ -32,6 +32,9 @@
                   Identifier = "HomeWorkTests/testArrayPlist">
                </Test>
                <Test
+                  Identifier = "HomeWorkTests/testDictionaryAddData">
+               </Test>
+               <Test
                   Identifier = "HomeWorkTests/testLiteral">
                </Test>
                <Test

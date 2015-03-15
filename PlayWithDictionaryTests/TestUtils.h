@@ -11,4 +11,6 @@
 + (NSMutableArray *)loadRawDataArray;
 
 + (void)performBlock:(void (^)())pFunction nTimes:(int)times;
+
++ (NSMutableArray *)buildPreparedArray;
 @end

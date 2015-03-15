@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <string>Algeria</string>
+        <string>Canary Islands</string>
+        <string>Ceuta</string>
+        <string>Egypt</string>
+        <string>Libya</string>
+        <string>Madeira</string>
+        <string>Melilla</string>
+        <string>Morocco</string>
+        <string>Sudan</string>
+        <string>Tunisia</string>
+        <string>Western Sahara</string>
+        <string>Djibouti</string>
+        <string>Eritrea</string>
+        <string>Ethiopia</string>
+        <string>Somalia</string>
+        <string>Burundi</string>
+        <string>Comoros</string>
+        <string>Kenya</string>
+        <string>Madagascar</string>
+        <string>Malawi</string>
+        <string>Mauritius</string>
+        <string>Mayotte</string>
+        <string>Mozambique</string>
+        <string>Réunion</string>
+        <string>Rwanda</string>
+        <string>Seychelles</string>
+        <string>South Sudan</string>
+        <string>Tanzania</string>
+        <string>Uganda</string>
+        <string>Zambia</string>
+        <string>Zimbabwe</string>
+        <string>Angola</string>
+        <string>Cameroon</string>
+        <string>Central African Republic</string>
+        <string>Chad</string>
+        <string>Republic of the Congo</string>
+        <string>Democratic Republic of the Congo</string>
+        <string>Equatorial Guinea</string>
+        <string>Gabon</string>
+        <string>São Tomé and Príncipe</string>
+        <string>Botswana</string>
+        <string>Lesotho</string>
+        <string>Namibia</string>
+        <string>South Africa</string>
+        <string>Swaziland</string>
+        <string>Benin</string>
+        <string>Burkina Faso</string>
+        <string>Cape Verde</string>
+        <string>Gambia</string>
+        <string>Ghana</string>
+        <string>Guinea</string>
+        <string>Guinea-Bissau</string>
+        <string>Ivory Coast</string>
+        <string>Liberia</string>
+        <string>Mali</string>
+        <string>Mauritania</string>
+        <string>Niger</string>
+        <string>Nigeria</string>
+        <string>Senegal</string>
+        <string>Sierra Leone</string>
+        <string>Togo</string>
+    </array>
+</plist>

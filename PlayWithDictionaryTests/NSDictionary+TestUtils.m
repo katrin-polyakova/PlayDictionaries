@@ -7,6 +7,7 @@
 
 
 @implementation NSDictionary (TestUtils)
+
 - (void) logDictionary {
     NSArray *arrayKey = [self allKeys];
     for (NSString *item in arrayKey){

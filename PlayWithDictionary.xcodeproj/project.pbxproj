@@ -23,6 +23,7 @@
 		321E43604F967434E2A29F9C /* MOCK_DATA(14).json in Resources */ = {isa = PBXBuildFile; fileRef = 321E47C02D1CD25FF7476D04 /* MOCK_DATA(14).json */; };
 		321E439CB91D8C2719BF899C /* MOCK_DATA(4).json in Resources */ = {isa = PBXBuildFile; fileRef = 321E4F0D060207FACA426D55 /* MOCK_DATA(4).json */; };
 		321E43C55E8683CBB4487209 /* MOCK_DATA(20).json in Resources */ = {isa = PBXBuildFile; fileRef = 321E43612FC6DEEA3A4A3FDC /* MOCK_DATA(20).json */; };
+		321E44375A28DEA693C24CBF /* CountriesAfrica.plist in Resources */ = {isa = PBXBuildFile; fileRef = 321E4115838C4E4DC7E23A63 /* CountriesAfrica.plist */; };
 		321E44826643B6BDF9112B50 /* MOCK_DATA(23).json in Resources */ = {isa = PBXBuildFile; fileRef = 321E4F87D3583F82C8103CDF /* MOCK_DATA(23).json */; };
 		321E44BCBE7C646FD566648D /* MOCK_DATA(22).json in Resources */ = {isa = PBXBuildFile; fileRef = 321E493DAEFE949F28DFF15F /* MOCK_DATA(22).json */; };
 		321E44CB1FFCD669A564C0B1 /* MOCK_DATA(17).json in Resources */ = {isa = PBXBuildFile; fileRef = 321E4EF91CBAF0042264A9D9 /* MOCK_DATA(17).json */; };
@@ -70,6 +71,7 @@
 		321E4F0B28DFE6F58D2C73BB /* AddressKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 321E4C97CDD09B28272618BD /* AddressKey.m */; };
 		321E4F31CE93BD473DB35305 /* MOCK_DATA(3).json in Resources */ = {isa = PBXBuildFile; fileRef = 321E446804F343F1287857A4 /* MOCK_DATA(3).json */; };
 		321E4F4CB9E7531DA263F884 /* BadAddressKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 321E4B5CC6F71BD06E366C25 /* BadAddressKey.m */; };
+		44AA34261AB5889100E1D2B4 /* CountriesAfricaAndSA.plist in Resources */ = {isa = PBXBuildFile; fileRef = 321E408E126B54F548CA8912 /* CountriesAfricaAndSA.plist */; };
 		44B1B2711A7E105C00AFD58F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B1B2701A7E105C00AFD58F /* main.m */; };
 		44B1B2741A7E105C00AFD58F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B1B2731A7E105C00AFD58F /* AppDelegate.m */; };
 		44B1B2771A7E105C00AFD58F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B1B2761A7E105C00AFD58F /* ViewController.m */; };
@@ -91,7 +93,9 @@
 
 /* Begin PBXFileReference section */
 		321E400C516D7138534BE9C5 /* MOCK_DATA(11).json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "MOCK_DATA(11).json"; sourceTree = "<group>"; };
+		321E408E126B54F548CA8912 /* CountriesAfricaAndSA.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = CountriesAfricaAndSA.plist; sourceTree = "<group>"; };
 		321E40CE2AA116905D68A4B0 /* NSArray+Testutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Testutils.h"; sourceTree = "<group>"; };
+		321E4115838C4E4DC7E23A63 /* CountriesAfrica.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = CountriesAfrica.plist; sourceTree = "<group>"; };
 		321E414C10F6159D153B85D3 /* TestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtils.m; sourceTree = "<group>"; };
 		321E41A3BC17DF135A8AF4CA /* HomeWorkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWorkTests.m; sourceTree = "<group>"; };
 		321E41A4F789A64F44CD1508 /* MOCK_DATA(16).json */ = {isa = PBXFileReference; lastKnownFileType = file.json; path = "MOCK_DATA(16).json"; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 				321E49F88845E612A0048C95 /* BadAddressKey.h */,
 				321E4C0F5FA35107FEB15236 /* UserInfoFilter.m */,
 				321E44538D87FE876B023EDC /* UserInfoFilter.h */,
+				321E408E126B54F548CA8912 /* CountriesAfricaAndSA.plist */,
 			);
 			path = PlayWithDictionary;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				321E48F7B8FD0631B98C9F3F /* NSDictionary+TestUtils.h */,
 				321E4FD42C34F0D8DD83051C /* PhoneBook.plist */,
 				321E41A3BC17DF135A8AF4CA /* HomeWorkTests.m */,
+				321E4115838C4E4DC7E23A63 /* CountriesAfrica.plist */,
 			);
 			path = PlayWithDictionaryTests;
 			sourceTree = "<group>";
@@ -355,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44B1B27A1A7E105C00AFD58F /* Main.storyboard in Resources */,
+				44AA34261AB5889100E1D2B4 /* CountriesAfricaAndSA.plist in Resources */,
 				44B1B27F1A7E105C00AFD58F /* LaunchScreen.xib in Resources */,
 				44B1B27C1A7E105C00AFD58F /* Images.xcassets in Resources */,
 				321E463BE6D0727ED9AFB82D /* MOCK_DATA(0).json in Resources */,
@@ -415,6 +422,7 @@
 				321E4B143B73934D901367D0 /* CountriesSA.plist in Resources */,
 				321E4830773F00A3424F267D /* NewFilms.plist in Resources */,
 				321E42EB10E78C55C3DB10F3 /* PhoneBook.plist in Resources */,
+				321E44375A28DEA693C24CBF /* CountriesAfrica.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

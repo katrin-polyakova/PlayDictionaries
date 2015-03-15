@@ -11,6 +11,8 @@
 
 - (void)logArray;
 
+- (void)logArrayTopN:(NSUInteger)entriesCount;
+
 - (NSArray *)arrayByRemovingDuplications;
 
 - (NSUInteger)countOfObjectOccurrences:(id)object;

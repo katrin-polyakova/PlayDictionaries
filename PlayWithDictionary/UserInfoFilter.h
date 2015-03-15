@@ -5,6 +5,20 @@
 
 #import <Foundation/Foundation.h>
 
+@class UserInfo;
+
 
 @interface UserInfoFilter : NSObject
+
+@property NSArray *users;
+
+- (instancetype)initWithUsers:(NSArray *)users;
++ (instancetype)filterWithUsers:(NSArray *)users;
+
+
+- (NSArray *)filterByAfricaAndSA;
+- (NSArray *)filterNameStartWith:(NSString *)prefix;
+- (NSArray *)filterNoZipCode;
+
+
 @end

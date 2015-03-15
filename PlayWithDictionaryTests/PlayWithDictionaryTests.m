@@ -42,7 +42,7 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
     [self measureMetrics:[[self class] defaultPerformanceMetrics] automaticallyStartMeasuring:NO forBlock:^{
 
         //загружаем наш массив, в котором будем искать нужные данные
-        NSMutableArray *preparedArray = [self buildPreparedArray];
+        NSMutableArray *preparedArray = [TestUtils buildPreparedArray];
 
         [self startMeasuring]; //начало выполнения
         // выполнение поиска
@@ -68,17 +68,7 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
 
 }
 
-//реализация метода создания массива из данных MOCK_DATA
-- (NSMutableArray *)buildPreparedArray {
-    NSArray *rawData = [TestUtils loadRawDataArray];
 
-    NSMutableArray *preparedArray = [[NSMutableArray alloc] initWithCapacity:rawData.count];
-    for (NSDictionary *dict in rawData) {
-        UserInfo *userInfo = [UserInfo infoWithDictionary:dict];
-        [preparedArray addObject:userInfo];
-    }
-    return preparedArray;
-}
 
 - (void)testPerformance_searchInDictionary {
 
@@ -127,8 +117,8 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
 }
 
 - (void)testFilteringArray {
-    NSMutableArray *preparedArray = [self buildPreparedArray];
-    NSArray *array = [NSArray loadTestListByName:@"CountriesSA" clazz:[self class]];
+    NSMutableArray *preparedArray = [TestUtils buildPreparedArray];
+    NSArray *array = [NSArray loadTestListByName:@"CountriesAfrica" clazz:[self class]];
 //    NSArray *countries = array;
 
     NSSet *countries = [NSSet setWithArray:array];
@@ -153,6 +143,13 @@ static NSString *const TARGET_BITCOIN_ID = @"1C14TpbkGWeLQazm84JhX2yjBA4fbAN4E9"
         [self stopMeasuring];
         NSLog(@"found users count: %d", finalArray.count);
     }];
+
+}
+
+- (void)testFilteredArrayByCountries {
+
+    NSArray *array = [NSArray loadTestListByName:@"CountriesSA" clazz:[self class]];
+    [array logArray];
 
 }
 

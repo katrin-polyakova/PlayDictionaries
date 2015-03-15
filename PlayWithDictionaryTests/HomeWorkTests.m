@@ -10,6 +10,9 @@
 #import <XCTest/XCTest.h>
 #import "NSDictionary+TestUtils.h"
 #import "NSArray+Testutils.h"
+#import "UserInfo.h"
+#import "TestUtils.h"
+#import "UserInfoFilter.h"
 
 @interface HomeWorkTests : XCTestCase
 
@@ -46,19 +49,39 @@
     NSLog(@"\nenumeration in \"for\" loop in array");
     for (NSUInteger i = 0; i < films2015.count; i++) {
         NSLog(@"%@", films2015[i]);
+
+        // how to realize 'break' here
+        if (i==1) {
+            break;
+        }
     }
     //fast enumeration
     NSLog(@"\nfast enumeration in array");
     for (NSString *item in films2015) {
         NSLog(@"%@", item);
+
+        // how to realize 'break' here
+        NSUInteger index = [films2015 indexOfObject:item];
+        if (index==1) {
+            break;
+        }
     }
     //enumeration with block
     NSLog(@"\nenumeration with block in array");
-    [films2015 enumerateObjectsUsingBlock:^(NSString *item, NSUInteger idx, BOOL *stop) {
-        NSLog(@"%@", item);
+    [films2015 enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"%@", obj);
+
+        // how to realize 'break' here
+        if (idx==1) {
+            *stop = YES;
+        }
     }];
 
     [films2015 logArray];
+}
+
+- (NSArray *) getArrayData {
+    return [NSArray loadTestListByName:@"NewFilms" clazz:[HomeWorkTests class]];
 }
 
 - (void)testDictionaryPlist {
@@ -71,20 +94,16 @@
     //enumeration with block
     NSLog(@"\nenumeration with block in dictionary");
     [dictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
-        NSLog(@"%@ : %@", key , obj);
+        NSLog(@"key[%@] : value [%@]", key , obj);
     }];
 
     //fast enumeration
     NSLog(@"\nfast enumeration in dictionary");
-    NSArray *arrayKey = [dictionary allKeys];
-    for (NSString *item in arrayKey){
-        NSLog(@"%@ : +%@", item, dictionary[item]);
+    NSArray *arrayKeys = [dictionary allKeys];
+    for (NSString *item in arrayKeys){
+        NSLog(@"key[%@] : value [+%@]", item, dictionary[item]);
     }
 
-}
-
-- (NSArray *) getArrayData {
-    return [NSArray loadTestListByName:@"NewFilms" clazz:[HomeWorkTests class]];
 }
 
 - (void)testDictionaryAddData {
@@ -94,20 +113,47 @@
             @"zip":@62705,
             @"country":@"United States"};
 
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
 
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setDictionary:@{@"data":[NSData data],
             @"phone number":@9094664360,
             @"city":@"New York"}];
+    [dict logDictionary];
+    NSLog (@"\n");
+
     [dict addEntriesFromDictionary:dictionary];
+    [dict logDictionary];
+    NSLog (@"\n");
 
     [dict setValue:@"Robert" forKey:@"children name"];
     dict[@"user"] = @"tinaSt16@nature.com";
     dict[@"bitcoins"] = [NSNull null];
+    dict[@"derived"] = [UserInfo infoWithZip:@"61195" country:@"Ukrain" city:@"Kharkov" address:@"N/A" user:@"Katrin" bitcoin:nil];
 
     [dict logDictionary];
 }
 
+-(void)testEmptyZipCodeFilter {
+    NSArray *users = [TestUtils buildPreparedArray];
+    NSArray *filteredUsers = [[[UserInfoFilter alloc] initWithUsers:users] filterNoZipCode];
+
+    [filteredUsers logArrayTopN:10];
+}
+
+- (void) testFilterByName {
+    NSArray *users = [TestUtils buildPreparedArray];
+    NSArray *filteredUsers = [[[UserInfoFilter alloc] initWithUsers:users] filterNameStartWith:@"w"];
+
+    [filteredUsers logArrayTopN:10];
+}
+
+- (void) testFilterByCountries {
+    NSArray *users = [TestUtils buildPreparedArray];
+    NSArray *filteredUsers = [[[UserInfoFilter alloc] initWithUsers:users] filterByAfricaAndSA];
+
+    [filteredUsers logArrayTopN:10];
+
+}
 
 
 - (void)testPerformanceExample {

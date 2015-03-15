@@ -29,6 +29,24 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "HomeWorkTests/testArrayPlist">
+               </Test>
+               <Test
+                  Identifier = "HomeWorkTests/testDictionaryAddData">
+               </Test>
+               <Test
+                  Identifier = "HomeWorkTests/testDictionaryPlist">
+               </Test>
+               <Test
+                  Identifier = "HomeWorkTests/testEmptyZipCodeFilter">
+               </Test>
+               <Test
+                  Identifier = "HomeWorkTests/testFilterByName">
+               </Test>
+               <Test
+                  Identifier = "HomeWorkTests/testLiteral">
+               </Test>
+               <Test
                   Identifier = "HomeWorkTests/testPerformanceExample">
                </Test>
                <Test

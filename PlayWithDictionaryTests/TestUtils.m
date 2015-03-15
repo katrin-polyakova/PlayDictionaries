@@ -4,6 +4,7 @@
 //
 
 #import "TestUtils.h"
+#import "UserInfo.h"
 
 
 @implementation TestUtils {
@@ -41,4 +42,16 @@
     }
 
 }
+
++ (NSMutableArray *)buildPreparedArray {
+    NSArray *rawData = [TestUtils loadRawDataArray];
+
+    NSMutableArray *preparedArray = [[NSMutableArray alloc] initWithCapacity:rawData.count];
+    for (NSDictionary *dict in rawData) {
+        UserInfo *userInfo = [UserInfo infoWithDictionary:dict];
+        [preparedArray addObject:userInfo];
+    }
+    return preparedArray;
+}
+
 @end

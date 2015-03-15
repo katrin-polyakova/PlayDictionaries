@@ -21,6 +21,18 @@
     NSLog(@"\nArray, count:%d \n[%@]\n", self.count, arrayAsString);
 }
 
+- (void)logArrayTopN :(NSUInteger)entriesCount {
+    // NSUInteger minCount = MIN(entriesCount, self.count); // - макрос для нахождения минимального числа из двух
+
+    NSUInteger minCount = entriesCount > self.count ? self.count : entriesCount;
+
+    for (NSUInteger i=0; i<minCount; i++) {
+        NSLog (@"%@", self[i]);
+    }
+
+    NSLog (@"Total count: %d", self.count);
+}
+
 - (NSArray *)arrayByRemovingDuplications {
     NSMutableArray *copyArray = [self mutableCopy];
     for(NSUInteger i=0; i<copyArray.count-1; i++){
